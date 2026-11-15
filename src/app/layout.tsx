@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { sites } from "@/lib/sites";
 import { skills } from "@/lib/content";
+// Cinzel, Manrope, Outfit and Unbounded, self-hosted from public/fonts under their own names (the 3D textures in
+// src/lib/textures.ts draw with these names, so next/font, which renames families, is not used).
+import "./google-fonts.css";
 import "./globals.css";
 
 const SITE = "https://gowtham.codelove.in";
@@ -128,10 +131,9 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="sitemap" type="application/xml" href="https://gowtham.codelove.in/sitemap.xml" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
-        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&family=Unbounded:wght@700;800;900&display=swap" rel="stylesheet" />
+        {/* The body and heading fonts, needed for the first screen: fetch them with the HTML. */}
+        <link rel="preload" href="/fonts/manrope-400-latin.woff2" as="font" type="font/woff2" crossOrigin="" />
+        <link rel="preload" href="/fonts/unbounded-700-latin.woff2" as="font" type="font/woff2" crossOrigin="" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         {/* CodeLove Analytics (admin.codelove.in) */}
         <script defer src="https://admin.codelove.in/t.js" />
