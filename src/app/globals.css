@@ -103,6 +103,108 @@ body {
   margin-top: 6px;
   color: var(--dim);
 }
+/* About · Contact · Privacy, a quiet text row under the name */
+.hud-links {
+  display: flex;
+  gap: 14px;
+  margin-top: 10px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+.hud-links a {
+  color: var(--dim);
+  opacity: 0.8;
+  transition: color 0.2s, opacity 0.2s;
+}
+.hud-links a:hover {
+  color: var(--gold);
+  opacity: 1;
+}
+
+/* About, Contact and Privacy pages: plain readable text on the museum's dark background */
+.info-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.info-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px clamp(16px, 3vw, 32px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.info-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 14px;
+}
+.info-nav a {
+  color: var(--dim);
+}
+.info-nav a:hover {
+  color: var(--gold);
+}
+.info-main {
+  flex: 1;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 16px 64px;
+  line-height: 1.7;
+  color: var(--dim);
+}
+.info-main h1 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(28px, 5vw, 40px);
+  line-height: 1.15;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+.info-main h2 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text);
+  margin: 32px 0 8px;
+}
+.info-main p,
+.info-main ul {
+  margin-bottom: 14px;
+}
+.info-main ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+.info-main li {
+  margin-bottom: 6px;
+}
+.info-main b {
+  color: var(--text);
+}
+.info-main a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.info-updated {
+  font-size: 13px;
+  opacity: 0.8;
+}
+.info-foot {
+  padding: 20px clamp(16px, 3vw, 32px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 13px;
+  color: var(--dim);
+}
+.info-foot a:hover {
+  color: var(--gold);
+}
+
 .hud-tools {
   position: fixed;
   z-index: 10;
@@ -1006,6 +1108,11 @@ html.manual .caption {
   }
   .brand span {
     font-size: 20px;
+  }
+  .hud-links {
+    gap: 12px;
+    margin-top: 7px;
+    font-size: 10px;
   }
   .hint {
     display: none;

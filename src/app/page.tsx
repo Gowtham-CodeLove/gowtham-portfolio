@@ -20,6 +20,11 @@ export default function Home() {
           <span>GOWTHAM</span>
           <small>creative web developer</small>
         </a>
+        <nav className="hud-links" aria-label="About, contact and privacy">
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+          <a href="/privacy">Privacy</a>
+        </nav>
       </header>
 
       <main className="hud cards">

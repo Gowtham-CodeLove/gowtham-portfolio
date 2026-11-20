@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { sites } from "@/lib/sites";
 import { skills } from "@/lib/content";
+import { ADSENSE_CLIENT } from "@/lib/adsense";
+import AdSenseScript from "@/components/AdSenseScript";
 // Cinzel, Manrope, Outfit and Unbounded, self-hosted from public/fonts under their own names (the 3D textures in
 // src/lib/textures.ts draw with these names, so next/font, which renames families, is not used).
 import "./google-fonts.css";
@@ -137,8 +139,13 @@ export default function RootLayout({
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         {/* CodeLove Analytics (admin.codelove.in) */}
         <script defer src="https://admin.codelove.in/t.js" />
+        {/* Google AdSense — only once a publisher ID is set in src/lib/adsense.ts; the tag itself loads after hydration */}
+        {ADSENSE_CLIENT ? <meta name="google-adsense-account" content={ADSENSE_CLIENT} /> : null}
       </head>
-      <body>{children}</body>
+      <body>
+        {ADSENSE_CLIENT ? <AdSenseScript client={ADSENSE_CLIENT} /> : null}
+        {children}
+      </body>
     </html>
   );
 }

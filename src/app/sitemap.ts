@@ -1,16 +1,16 @@
 import type { MetadataRoute } from "next";
 
-// The whole museum is one page. Listed the way every CodeLove site lists its pages:
-// lastmod is the build time, checked daily, top priority.
+// The museum plus the About, Contact and Privacy pages. Listed the way every CodeLove site lists its pages:
+// lastmod is the build time, checked daily, top priority. URLs match each page's canonical link.
 export const dynamic = "force-static";
 
+const SITE = "https://gowtham.codelove.in";
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: "https://gowtham.codelove.in", // same as the page's canonical link
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 1,
-    },
-  ];
+  return ["", "/about", "/contact", "/privacy"].map((path) => ({
+    url: `${SITE}${path}`,
+    lastModified: new Date(),
+    changeFrequency: "daily",
+    priority: 1,
+  }));
 }
