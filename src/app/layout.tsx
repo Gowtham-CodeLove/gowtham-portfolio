@@ -9,9 +9,9 @@ import "./google-fonts.css";
 import "./globals.css";
 
 const SITE = "https://gowtham.codelove.in";
-const TITLE = "Gowtham — Creative Web Developer & CodeLove Founder";
+const TITLE = "Gowtham — Creative Web Developer & Three.js 3D Portfolio";
 const DESCRIPTION =
-  "Gowtham (Gowthamraj), creative web developer & founder of CodeLove. Explore his 3D portfolio featuring Video Cut, Free 3D Models, and 14+ 3D games.";
+  "Gowtham (Gowthamraj), creative web developer and founder of CodeLove. Walk through his three.js 3D portfolio: Video Cut, free 3D models and 14+ games.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
